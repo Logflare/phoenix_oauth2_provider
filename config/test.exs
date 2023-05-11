@@ -11,7 +11,10 @@ config :phoenix_oauth2_provider, DummyWeb.Endpoint,
 config :phoenix_oauth2_provider, Dummy.Repo,
   database: "phoenix_oauth2_provider_test",
   pool: Ecto.Adapters.SQL.Sandbox,
-  priv: "test/support/priv"
+  priv: "test/support/priv",
+  host: "localhost",
+  password: "postgres",
+  username: "postgres"
 
 config :phoenix_oauth2_provider, ExOauth2Provider,
   repo: Dummy.Repo,
