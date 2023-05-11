@@ -38,7 +38,7 @@ defmodule PhoenixOauth2Provider.Mixfile do
       {:ex_oauth2_provider, "~> 0.5.1"},
       {:phoenix, ">= 1.5.0 and < 1.8.0"},
       {:phoenix_view, "~> 2.0.0"},
-      {:phoenix_html, "~> 3.0.0"},
+      {:phoenix_html, "~> 3.3"},
       {:phoenix_ecto, "~> 4.3.0", only: [:test, :dev]},
       {:credo, "~> 1.6.0", only: [:dev, :test]},
       {:jason, "~> 1.0", only: [:dev, :test]},
