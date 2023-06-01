@@ -92,7 +92,6 @@ defmodule PhoenixOauth2Provider.ApplicationControllerTest do
         oauth_application: @invalid_attrs
       )
 
-    IO.inspect(html_response(conn, 200))
     assert html_response(conn, 200) =~ "Edit Application"
   end
 

@@ -28,4 +28,23 @@ defmodule PhoenixOauth2Provider.ControllerTest do
 
     assert html_response(conn, 200)
   end
+
+  describe "application config" do
+    setup do
+      config = Application.get_env(:phoenix_oauth2_provider, PhoenixOauth2Provider)
+      new_config = Keyword.put(config || [], :web_module, DummyWeb)
+      Application.put_env(:phoenix_oauth2_provider, PhoenixOauth2Provider, new_config)
+
+      on_exit(fn ->
+        Application.put_env(:phoenix_oauth2_provider, PhoenixOauth2Provider, config)
+      end)
+
+      :ok
+    end
+
+    test "handles custom web module", %{conn: conn} do
+      conn = get(conn, Routes.oauth_application_path(conn, :index))
+      assert html_response(conn, 200)
+    end
+  end
 end
