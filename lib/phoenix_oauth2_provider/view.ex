@@ -1,13 +1,13 @@
 defmodule PhoenixOauth2Provider.View do
   @moduledoc false
 
-  alias Phoenix.HTML.Tag
+  alias PhoenixHTMLHelpers.Tag
 
   @doc false
   defmacro __using__(_opts) do
     quote do
       import unquote(__MODULE__)
-      import Phoenix.HTML.{Form, Link, Tag}
+      import PhoenixHTMLHelpers.{Form, Link, Tag}
 
       alias PhoenixOauth2Provider.Router.Helpers, as: Routes
 
