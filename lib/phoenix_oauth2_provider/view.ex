@@ -1,17 +1,13 @@
 defmodule PhoenixOauth2Provider.View do
   @moduledoc false
 
-  import Phoenix.HTML
-  import Phoenix.HTML.Form
-  use PhoenixHTMLHelpers
+  alias Phoenix.HTML.Tag
 
   @doc false
   defmacro __using__(_opts) do
     quote do
       import unquote(__MODULE__)
-      import Phoenix.HTML
-      import Phoenix.HTML.Form
-      use PhoenixHTMLHelpers
+      import Phoenix.HTML.{Form, Link, Tag}
 
       alias PhoenixOauth2Provider.Router.Helpers, as: Routes
 
@@ -51,7 +47,7 @@ defmodule PhoenixOauth2Provider.View do
   end
 
   def error_tag(error) do
-    content_tag(:span, translate_error(error), class: "help-block")
+    Tag.content_tag(:span, translate_error(error), class: "help-block")
   end
 
   defp translate_error({msg, opts}) do
