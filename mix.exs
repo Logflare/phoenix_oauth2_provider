@@ -36,7 +36,7 @@ defmodule PhoenixOauth2Provider.Mixfile do
   defp deps do
     [
       {:ex_oauth2_provider, "~> 0.5.1"},
-      {:phoenix, ">= 1.5.0 and < 1.8.0"},
+      {:phoenix, ">= 1.5.0 and < 1.9.0"},
       {:phoenix_view, "~> 2.0.0"},
       {:phoenix_html, "~> 4.0"},
       {:phoenix_html_helpers, "~> 1.0"},
